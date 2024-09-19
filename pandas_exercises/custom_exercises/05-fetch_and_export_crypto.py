@@ -26,6 +26,21 @@ def collect_data(current_data):
     frame = pd.DataFrame(coins_list)
     return frame
 
+# Just added version with map along with lambda
+# def collect_data(current_data):
+#     # Use map to transform each element of current_data
+#     coins_list = list(map(lambda x: {
+#         'name': x['name'],
+#         'symbol': x['symbol'],
+#         'current_price': round(x['current_price'], 2),
+#         'market_cap': x['market_cap'],
+#         'total_volume': x['total_volume']
+#     }, current_data))
+#
+#     # Convert the list of dictionaries to a DataFrame
+#     frame = pd.DataFrame(coins_list)
+#     return frame
+
 
 def load_to_excel_file(data_frame, file_name='crypto_data.xlsx', location='C:\\Users\\Ertan\\Downloads\\'):
     full_path = os.path.join(location, file_name)
